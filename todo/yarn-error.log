@@ -1,0 +1,59 @@
+Arguments: 
+  /usr/local/nvm/versions/node/v18.12.1/bin/node /usr/local/nvm/versions/node/v18.12.1/bin/yarn run dev
+
+PATH: 
+  /opt/gradle/bin:/opt/maven/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/bin:/usr/local/nvm/versions/node/v18.12.1/bin:/usr/local/rvm/bin:/google/go_appengine:/google/google_appengine:/google/migrate/anthos/:/home/arkhanoid82/.gems/bin:/usr/local/rvm/bin:/home/arkhanoid82/gopath/bin:/google/gopath/bin:/google/flutter/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.12.1
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /home/arkhanoid82/djangoreact/todo/package.json: Unexpected token / in JSON at position 69
+      at JSON.parse (<anonymous>)
+      at /usr/local/nvm/versions/node/v18.12.1/lib/node_modules/yarn/lib/cli.js:1629:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/nvm/versions/node/v18.12.1/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /usr/local/nvm/versions/node/v18.12.1/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "todo",
+    "version": "1.0.0",
+    "main": "index.js",
+    
+    // These are the scripts you should add
+    "scripts": {
+      "dev": "webpack --mode development --watch",
+      "build": "webpack --mode production"
+    },
+    
+    "license": "MIT",
+    "dependencies": {
+      "@babel/plugin-proposal-class-properties": "^7.13.0",
+      "react-router-dom": "^5.2.0"
+    },
+    "devDependencies": {
+      "@babel/core": "^7.13.14",
+      "@babel/preset-env": "^7.13.12",
+      "@babel/preset-react": "^7.13.13",
+      "babel-loader": "^8.2.2",
+      "css-loader": "^5.2.0",
+      "react": "^17.0.2",
+      "react-dom": "^17.0.2",
+      "style-loader": "^2.0.0",
+      "webpack": "^5.30.0",
+      "webpack-cli": "^4.6.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
