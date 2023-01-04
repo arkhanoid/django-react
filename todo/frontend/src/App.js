@@ -6,7 +6,7 @@ import Icon from '@mui/material/Icon';
 import { UncontrolledCollapse, ListGroup, ListGroupItem } from 'reactstrap';
 
 
-const HOST = window.location.protocol + '//' + window.location.hostname
+const HOST = window.location.protocol + '//' + window.location.hostname + ( window.location.port == 80 ? '' : ':' + window.location.port )
 const csrfToken = () => {
     var cookieValue = null;
     const name = 'csrftoken';
@@ -110,7 +110,7 @@ renderTabList = () => {
 		<Icon onClick={this.createItem} >
 		add_task
 		</Icon>
-
+		<Icon onClick={() => { console.log('refresh requested'); this.refreshList()}}>refresh</Icon>
 
 	</div>
 	);
