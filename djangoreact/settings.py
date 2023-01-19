@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,9 +26,36 @@ SECRET_KEY = 'django-insecure-xz!0-sbs$m_30@i5eb71q!66kx+@1fw&im_^4(3bz4^r3yo_kr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.15.6']
+ALLOWED_HOSTS = ['192.168.15.6', 'localhost']
+# PWA configuration
 
+PWA_APP_NAME = 'django-react-pwa'
+PWA_APP_DESCRIPTION = "Todo List PWA"
+PWA_APP_THEME_COLOR = '#000000'
+PWA_APP_BACKGROUND_COLOR = '#ffffff'
+PWA_APP_DISPLAY = 'standalone'
+PWA_APP_SCOPE = '/'
+PWA_APP_ORIENTATION = 'any'
+PWA_APP_START_URL = '/'
+PWA_APP_STATUS_BAR_COLOR = 'default'
+PWA_APP_ICONS = [
+    {
+        'src': '/static/icon-160x160.png',
+        'sizes': '160x160'
+    }
+]
+PWA_APP_ICONS_APPLE = PWA_APP_ICONS 
 
+PWA_APP_SPLASH_SCREEN = [
+    {
+        'src': '/static/icon.png',
+        'media': '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)'
+    }
+]
+PWA_APP_DIR = 'ltr'
+PWA_APP_LANG = 'en-US'
+
+PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'todo/static', 'sw.js')
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,7 +67,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'todo',
     'rest_framework',
-    'compressor'
+    'compressor',
+    'pwa'
 ]
 
 MIDDLEWARE = [
